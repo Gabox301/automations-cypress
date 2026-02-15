@@ -23,11 +23,7 @@ jobs:
         with:
           node-version: 22
 
-      - name: Install dependencies
-        run: npm install
-
       - name: Cypress run
         uses: cypress-io/github-action@v6
         with:
-          install: false
           spec: cypress/e2e/CyberMap/smoke_test.cy.js
