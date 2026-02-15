@@ -23,8 +23,7 @@ El proyecto sigue la estructura estándar de Cypress:
 
 Para ejecutar estas automatizaciones, necesitarás tener instalado:
 
-- [Node.js](https://nodejs.org/) (Versión recomendada: 18 o superior)
-- [pnpm](https://pnpm.io/) (Opcional, pero recomendado como gestor de paquetes)
+- [Node.js](https://nodejs.org/) (Versión recomendada: 22 o superior)
 
 ## 🚀 Instalación
 
@@ -36,9 +35,8 @@ Para ejecutar estas automatizaciones, necesitarás tener instalado:
    ```
 
 2. Instala las dependencias:
+
    ```bash
-   pnpm install
-   # o si usas npm
    npm install
    ```
 
