@@ -1,0 +1,10 @@
+{
+  "base_url": "https://cyber-map.vercel.app/",
+  "selectors": {
+    "coordinate_copy_button": "#coordinate-copy-button",
+    "google_maps_button": "#coordinate-google-maps-button",
+    "close_button": "#coordinate-close-button",
+    "popup_details_button": "[id^=\"popup-details-button-\"]",
+    "popup_delete_button": "[id^=\"popup-remove-button-\"]"
+  }
+}

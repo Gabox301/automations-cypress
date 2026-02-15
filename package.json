@@ -1,0 +1,24 @@
+{
+  "name": "automations",
+  "version": "1.0.0",
+  "description": "Directorio de Automatizaciones para proyectos personales de GaboTech",
+  "main": "index.js",
+  "scripts": {
+    "back": "npx cypress run",
+    "front": "npx cypress open"
+  },
+  "keywords": [
+    "automation",
+    "cypress",
+    "e2e"
+  ],
+  "author": "Gabriel Ortega",
+  "license": "ISC",
+  "type": "module",
+  "devDependencies": {
+    "cypress": "^15.10.0",
+    "cypress-file-upload": "^5.0.8",
+    "cypress-plugin-api": "2.11.2",
+    "dotenv": "^17.3.1"
+  }
+}
