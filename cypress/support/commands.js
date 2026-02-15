@@ -2,6 +2,8 @@
 
 // ***********************************************
 
+const timeout = 80000;
+
 Cypress.Commands.add('limpiar_redis', () => {
   cy.env(['API_TOKEN', 'API_URL']).then(({ API_TOKEN, API_URL }) => {
     return cy
@@ -11,6 +13,7 @@ Cypress.Commands.add('limpiar_redis', () => {
         body: {
           Token: API_TOKEN,
         },
+        timeout: timeout,
       })
       .then((response) => {
         expect(response.status).to.eq(200);
@@ -28,6 +31,7 @@ Cypress.Commands.add('limpiar_turso', () => {
         body: {
           Token: API_TOKEN,
         },
+        timeout: timeout,
       })
       .then((response) => {
         expect(response.status).to.eq(200);
