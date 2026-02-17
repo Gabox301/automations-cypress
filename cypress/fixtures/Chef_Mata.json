@@ -1,0 +1,78 @@
+{
+  "base_url": "https://pastas-mata.vercel.app/",
+  "selectors": {
+    "login": {
+      "email_input": "#email",
+      "password_input": "#password",
+      "login_button": "#login-submit-button"
+    },
+    "navigations": {
+      "dish_create": "#sidebar-link-create-dish",
+      "dish_manage": "#sidebar-link-manage-dishes",
+      "chef_info": "#sidebar-link-info",
+      "stats": "#sidebar-link-stats",
+      "menu": "#sidebar-button-view-menu",
+      "logout": "#sidebar-button-logout",
+      "confirm_logout": "#logout-confirm-button"
+    },
+    "create_dish": {
+      "dish_name": "#name",
+      "dish_description": "#description",
+      "dish_price": "#price",
+      "dish_image": "#image",
+      "dish_video": "#video",
+      "dish_badge": "#badge-text-input",
+      "dish_badge_create_button": "#badge-action-button",
+      "dish_tag": "#label-input-0",
+      "dish_tag_create_button": "#add-label-button",
+      "dish_tag_remove_button": "#remove-label-button-1",
+      "dish_ingredient": "#ingredient-input-0",
+      "dish_ingredient_add_button": "#add-ingredient-button",
+      "dish_ingredient_remove_button": "#remove-ingredient-button-1",
+      "dish_calories": "#calories",
+      "dish_protein": "#protein",
+      "dish_weight": "#weight",
+      "dish_cook_time": "#cooking-time",
+      "dish_qr_link": "#qrCodeUrl",
+      "dish_create_button": "#save-dish-button"
+    },
+    "manage_dish": {
+      "edit_button": "[id^=\"edit-dish-button-\"]",
+      "delete_button": "[id^=\"delete-dish-button-\"]",
+      "confirm_delete_button": "[id^=\"confirm-delete-dish-button-\"]"
+    }
+  },
+  "dish_data": {
+    "name": "Plato de prueba",
+    "price": "15800",
+    "description": "Descripción del plato de prueba",
+    "imagen": "images/Chef_Mata_1.jpg",
+    "video": "videos/Chef_Mata_1.webm",
+    "badge": "Delicioso",
+    "badge_color": "#badge-color-lime-500",
+    "tag": "Entrada",
+    "tag_color": "#label-color-0-blue-100",
+    "ingredient": "Ingrediente de prueba",
+    "calories": "300",
+    "protein": "250",
+    "weight": "800",
+    "cook_time": "17",
+    "qr_link": "https://music.youtube.com/playlist?list=PLTbqD_rJwAyjxD1SXTuRko0OZfU5Zq5VE&si=bA47J41Jplx2wid6"
+  },
+  "edit_data": {
+    "name": "Plato editado",
+    "price": "20000",
+    "description": "Descripción del plato de prueba editado",
+    "imagen": "images/Chef_Mata_2.jpg",
+    "badge": "Nutritivo",
+    "badge_color": "#badge-color-pink-500",
+    "tag": "Entremés",
+    "tag_color": "#label-color-0-orange-100",
+    "ingredient": "Ingrediente editado",
+    "calories": "230",
+    "protein": "100",
+    "weight": "450",
+    "cook_time": "8",
+    "qr_link": "https://open.spotify.com/intl-es/track/3sHH7lklbfpcraDDvYnjo7?si=80c7e228449a4cd6"
+  }
+}
