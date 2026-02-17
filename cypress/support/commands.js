@@ -17,3 +17,25 @@ Cypress.Commands.add('limpiar_base', (endpoint) => {
     });
   });
 });
+
+Cypress.Commands.add('llenar_inputs', (inputs) => {
+  inputs.forEach(({ selector, value }) => {
+    cy.get(selector).should('be.visible').type(value);
+  });
+});
+
+Cypress.Commands.add('limpiar_inputs', (selectors) => {
+  selectors.forEach((selector) => {
+    cy.get(selector).clear();
+  });
+});
+
+Cypress.Commands.add('click_buttons', (selectors) => {
+  if (Array.isArray(selectors)) {
+    selectors.forEach((selector) => {
+      cy.get(selector).should('be.visible').click();
+    });
+  } else {
+    cy.get(selectors).should('be.visible').click();
+  }
+});

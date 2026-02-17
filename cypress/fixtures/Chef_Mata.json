@@ -17,8 +17,8 @@
     },
     "create_dish": {
       "dish_name": "#name",
-      "dish_description": "#description",
       "dish_price": "#price",
+      "dish_description": "#description",
       "dish_image": "#image",
       "dish_video": "#video",
       "dish_badge": "#badge-text-input",

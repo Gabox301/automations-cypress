@@ -1,9 +1,24 @@
 import datos from '../../fixtures/Chef_Mata.json';
 
+const inputs_to_manage = [
+  'dish_name',
+  'dish_price',
+  'dish_description',
+  'dish_badge',
+  'dish_tag',
+  'dish_ingredient',
+  'dish_calories',
+  'dish_protein',
+  'dish_weight',
+  'dish_cook_time',
+  'dish_qr_link',
+];
+
 describe('Navegación a Chef Mata (pública)', () => {
   it('Debería navegar a la URL base', () => {
     cy.visit(datos.base_url);
     cy.url().should('include', datos.base_url);
+    cy.contains('Nuestro Menú', { timeout: 10000 }).should('be.visible');
   });
 });
 
@@ -15,7 +30,7 @@ describe('Navegación a Chef Mata (admin)', () => {
           cy.visit(CHEF_MATA_ADMIN_LOGIN);
           cy.get(datos.selectors.login.email_input).should('be.visible').type(CHEF_MATA_USER);
           cy.get(datos.selectors.login.password_input).should('be.visible').type(CHEF_MATA_PASSWORD);
-          cy.get(datos.selectors.login.login_button).click();
+          cy.click_buttons([datos.selectors.login.login_button]);
           cy.contains('Administración', { timeout: 10000 }).should('be.visible');
           cy.url().should('not.include', '/login');
         });
@@ -25,93 +40,76 @@ describe('Navegación a Chef Mata (admin)', () => {
   });
 
   it('Debería crear un plato', () => {
-    cy.get(datos.selectors.create_dish.dish_name).should('be.visible').type(datos.dish_data.name);
-    cy.get(datos.selectors.create_dish.dish_price).should('be.visible').type(datos.dish_data.price);
-    cy.get(datos.selectors.create_dish.dish_description).should('be.visible').type(datos.dish_data.description);
+    const inputs_data = inputs_to_manage.map((field) => ({
+      selector: datos.selectors.create_dish[field],
+      value: datos.dish_data[field.replace('dish_', '')],
+    }));
+    const buttons_to_click = [
+      datos.dish_data.badge_color,
+      datos.selectors.create_dish.dish_badge_create_button,
+      datos.dish_data.tag_color,
+      datos.selectors.create_dish.dish_tag_create_button,
+      datos.selectors.create_dish.dish_tag_remove_button,
+      datos.selectors.create_dish.dish_ingredient_add_button,
+      datos.selectors.create_dish.dish_ingredient_remove_button,
+      datos.selectors.create_dish.dish_create_button,
+    ];
+    cy.llenar_inputs(inputs_data);
     cy.get(datos.selectors.create_dish.dish_image).should('be.visible').attachFile(datos.dish_data.imagen);
     cy.get(datos.selectors.create_dish.dish_video).should('be.visible').attachFile(datos.dish_data.video);
-    cy.get(datos.selectors.create_dish.dish_badge).should('be.visible').type(datos.dish_data.badge);
-    cy.get(datos.dish_data.badge_color).should('be.visible').click();
-    cy.get(datos.selectors.create_dish.dish_badge_create_button).should('be.visible').click();
-    cy.get(datos.selectors.create_dish.dish_tag).should('be.visible').type(datos.dish_data.tag);
-    cy.get(datos.dish_data.tag_color).should('be.visible').click();
-    cy.get(datos.selectors.create_dish.dish_tag_create_button).should('be.visible').click();
-    cy.get(datos.selectors.create_dish.dish_tag_remove_button).should('be.visible').click();
-    cy.get(datos.selectors.create_dish.dish_ingredient).should('be.visible').type(datos.dish_data.ingredient);
-    cy.get(datos.selectors.create_dish.dish_ingredient_add_button).should('be.visible').click();
-    cy.get(datos.selectors.create_dish.dish_ingredient_remove_button).should('be.visible').click();
-    cy.get(datos.selectors.create_dish.dish_calories).should('be.visible').type(datos.dish_data.calories);
-    cy.get(datos.selectors.create_dish.dish_protein).should('be.visible').type(datos.dish_data.protein);
-    cy.get(datos.selectors.create_dish.dish_weight).should('be.visible').type(datos.dish_data.weight);
-    cy.get(datos.selectors.create_dish.dish_cook_time).should('be.visible').type(datos.dish_data.cook_time);
-    cy.get(datos.selectors.create_dish.dish_qr_link).should('be.visible').type(datos.dish_data.qr_link);
-    cy.get(datos.selectors.create_dish.dish_create_button).should('be.visible').click();
+    cy.click_buttons(buttons_to_click);
     cy.contains('Éxito', { timeout: 10000 }).should('be.visible');
   });
 
   it('Debería poder navegar a las distintas pantallas', () => {
-    cy.get(datos.selectors.navigations.dish_manage).should('be.visible').click();
+    cy.click_buttons([datos.selectors.navigations.dish_manage]);
     cy.url().should('include', '/dishes');
-    cy.get(datos.selectors.navigations.chef_info).should('be.visible').click();
+    cy.click_buttons([datos.selectors.navigations.chef_info]);
     cy.url().should('include', '/admin/info');
-    cy.get(datos.selectors.navigations.stats).should('be.visible').click();
+    cy.click_buttons([datos.selectors.navigations.stats]);
     cy.url().should('include', '/admin/estadisticas');
     cy.window().then((win) => {
       cy.stub(win, 'open').as('nuevaPestana');
     });
-    cy.get(datos.selectors.navigations.menu).should('be.visible').click();
+    cy.click_buttons([datos.selectors.navigations.menu]);
     cy.get('@nuevaPestana').should('have.been.called');
     cy.get('@nuevaPestana').its('firstCall.args').should('deep.equal', ['/', '_blank']);
   });
 
   it('Debería editar un plato', () => {
-    cy.get(datos.selectors.navigations.dish_manage).should('be.visible').click();
-    cy.url().should('include', '/dishes');
-    cy.get(datos.selectors.manage_dish.edit_button).should('be.visible').click();
-    cy.get(datos.selectors.create_dish.dish_name).clear();
-    cy.get(datos.selectors.create_dish.dish_price).clear();
-    cy.get(datos.selectors.create_dish.dish_description).clear();
-    cy.get(datos.selectors.create_dish.dish_badge).clear();
-    cy.get(datos.selectors.create_dish.dish_tag).clear();
-    cy.get(datos.selectors.create_dish.dish_ingredient).clear();
-    cy.get(datos.selectors.create_dish.dish_calories).clear();
-    cy.get(datos.selectors.create_dish.dish_protein).clear();
-    cy.get(datos.selectors.create_dish.dish_weight).clear();
-    cy.get(datos.selectors.create_dish.dish_cook_time).clear();
-    cy.get(datos.selectors.create_dish.dish_qr_link).clear();
-    cy.get(datos.selectors.create_dish.dish_name).should('be.visible').type(datos.edit_data.name);
-    cy.get(datos.selectors.create_dish.dish_price).should('be.visible').type(datos.edit_data.price);
-    cy.get(datos.selectors.create_dish.dish_description).should('be.visible').type(datos.edit_data.description);
+    const edits_data = inputs_to_manage.map((field) => ({
+      selector: datos.selectors.create_dish[field],
+      value: datos.edit_data[field.replace('dish_', '')],
+    }));
+    const buttons_to_click = [
+      datos.edit_data.badge_color,
+      datos.selectors.create_dish.dish_badge_create_button,
+      datos.edit_data.tag_color,
+      datos.selectors.create_dish.dish_tag_create_button,
+      datos.selectors.create_dish.dish_tag_remove_button,
+      datos.selectors.create_dish.dish_ingredient_add_button,
+      datos.selectors.create_dish.dish_ingredient_remove_button,
+      datos.selectors.create_dish.dish_create_button,
+    ];
+    cy.click_buttons([datos.selectors.navigations.dish_manage, datos.selectors.manage_dish.edit_button]);
+    cy.limpiar_inputs(inputs_to_manage.map((field) => datos.selectors.create_dish[field]));
+    cy.llenar_inputs(edits_data);
     cy.get(datos.selectors.create_dish.dish_image).should('be.visible').attachFile(datos.edit_data.imagen);
-    cy.get(datos.selectors.create_dish.dish_badge).should('be.visible').type(datos.edit_data.badge);
-    cy.get(datos.edit_data.badge_color).should('be.visible').click();
-    cy.get(datos.selectors.create_dish.dish_badge_create_button).should('be.visible').click();
-    cy.get(datos.selectors.create_dish.dish_tag).should('be.visible').type(datos.edit_data.tag);
-    cy.get(datos.edit_data.tag_color).should('be.visible').click();
-    cy.get(datos.selectors.create_dish.dish_tag_create_button).should('be.visible').click();
-    cy.get(datos.selectors.create_dish.dish_tag_remove_button).should('be.visible').click();
-    cy.get(datos.selectors.create_dish.dish_ingredient).should('be.visible').type(datos.edit_data.ingredient);
-    cy.get(datos.selectors.create_dish.dish_ingredient_add_button).should('be.visible').click();
-    cy.get(datos.selectors.create_dish.dish_ingredient_remove_button).should('be.visible').click();
-    cy.get(datos.selectors.create_dish.dish_calories).should('be.visible').type(datos.edit_data.calories);
-    cy.get(datos.selectors.create_dish.dish_protein).should('be.visible').type(datos.edit_data.protein);
-    cy.get(datos.selectors.create_dish.dish_weight).should('be.visible').type(datos.edit_data.weight);
-    cy.get(datos.selectors.create_dish.dish_cook_time).should('be.visible').type(datos.edit_data.cook_time);
-    cy.get(datos.selectors.create_dish.dish_qr_link).should('be.visible').type(datos.edit_data.qr_link);
-    cy.get(datos.selectors.create_dish.dish_create_button).should('be.visible').click();
+    cy.click_buttons(buttons_to_click);
     cy.contains('ha sido actualizado', { timeout: 10000 }).should('be.visible');
   });
 
   it('Debería poder eliminar un plato', () => {
-    cy.get(datos.selectors.navigations.dish_manage).should('be.visible').click();
-    cy.get(datos.selectors.manage_dish.delete_button).should('be.visible').click();
-    cy.get(datos.selectors.manage_dish.confirm_delete_button).should('be.visible').click();
+    cy.click_buttons([
+      datos.selectors.navigations.dish_manage,
+      datos.selectors.manage_dish.delete_button,
+      datos.selectors.manage_dish.confirm_delete_button,
+    ]);
     cy.contains('Plato eliminado').should('be.visible');
   });
 
   it('Debería poder cerrar sesión', () => {
-    cy.get(datos.selectors.navigations.logout).should('be.visible').click();
-    cy.get(datos.selectors.navigations.confirm_logout).should('be.visible').click();
+    cy.click_buttons([datos.selectors.navigations.logout, datos.selectors.navigations.confirm_logout]);
     cy.url().should('eq', datos.base_url);
   });
 });
