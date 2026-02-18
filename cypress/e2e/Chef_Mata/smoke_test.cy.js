@@ -55,8 +55,8 @@ describe('Navegación a Chef Mata (admin)', () => {
       datos.selectors.create_dish.dish_create_button,
     ];
     cy.llenar_inputs(inputs_data);
-    cy.get(datos.selectors.create_dish.dish_image).should('be.visible').attachFile(datos.dish_data.imagen);
-    cy.get(datos.selectors.create_dish.dish_video).should('be.visible').attachFile(datos.dish_data.video);
+    cy.get(datos.selectors.create_dish.dish_image).should('be.visible').selectFile(datos.dish_data.imagen);
+    cy.get(datos.selectors.create_dish.dish_video).should('be.visible').selectFile(datos.dish_data.video);
     cy.click_buttons(buttons_to_click);
     cy.contains('Éxito', { timeout: 10000 }).should('be.visible');
   });
@@ -94,7 +94,7 @@ describe('Navegación a Chef Mata (admin)', () => {
     cy.click_buttons([datos.selectors.navigations.dish_manage, datos.selectors.manage_dish.edit_button]);
     cy.limpiar_inputs(inputs_to_manage.map((field) => datos.selectors.create_dish[field]));
     cy.llenar_inputs(edits_data);
-    cy.get(datos.selectors.create_dish.dish_image).should('be.visible').attachFile(datos.edit_data.imagen);
+    cy.get(datos.selectors.create_dish.dish_image).should('be.visible').selectFile(datos.edit_data.imagen);
     cy.click_buttons(buttons_to_click);
     cy.contains('ha sido actualizado', { timeout: 10000 }).should('be.visible');
   });

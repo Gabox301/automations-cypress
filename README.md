@@ -67,8 +67,6 @@ npm run back
 ## 📦 Dependencias Principales
 
 - **Cypress**: Framework de pruebas E2E.
-- **cypress-file-upload**: Plugin para simular la carga de archivos.
-- **cypress-plugin-api**: Plugin para pruebas de API con visualización mejorada.
 - **dotenv**: Gestión de variables de entorno.
 
 ---

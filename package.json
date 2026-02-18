@@ -17,7 +17,6 @@
   "type": "module",
   "devDependencies": {
     "cypress": "^15.10.0",
-    "cypress-file-upload": "^5.0.8",
     "dotenv": "^17.3.1"
   }
 }
