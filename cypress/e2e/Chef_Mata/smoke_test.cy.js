@@ -42,6 +42,7 @@ describe('Navegación a Chef Mata (admin)', () => {
   });
 
   it('Debería crear un plato', () => {
+    cy.click_buttons([datos.selectors.navigations.dish_create]);
     const inputs_data = inputs_to_manage.map((field) => ({
       selector: datos.selectors.create_dish[field],
       value: datos.dish_data[field.replace('dish_', '')],
