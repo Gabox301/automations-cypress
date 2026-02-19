@@ -1,5 +1,7 @@
 import datos from '../../fixtures/Chef_Mata.json';
 
+let dish_id;
+
 const inputs_to_manage = [
   'dish_name',
   'dish_price',
@@ -91,7 +93,14 @@ describe('Navegación a Chef Mata (admin)', () => {
       datos.selectors.create_dish.dish_ingredient_remove_button,
       datos.selectors.create_dish.dish_create_button,
     ];
-    cy.click_buttons([datos.selectors.navigations.dish_manage, datos.selectors.manage_dish.edit_button]);
+    cy.click_buttons([datos.selectors.navigations.dish_manage]);
+    cy.get(datos.selectors.manage_dish.edit_button)
+      .first()
+      .invoke('attr', 'id')
+      .then((id) => {
+        dish_id = id.replace('edit-dish-button-', '');
+        cy.get(`#edit-dish-button-${dish_id}`).click();
+      });
     cy.limpiar_inputs(inputs_to_manage.map((field) => datos.selectors.create_dish[field]));
     cy.llenar_inputs(edits_data);
     cy.get(datos.selectors.create_dish.dish_image).should('be.visible').selectFile(datos.edit_data.imagen);
@@ -102,8 +111,8 @@ describe('Navegación a Chef Mata (admin)', () => {
   it('Debería poder eliminar un plato', () => {
     cy.click_buttons([
       datos.selectors.navigations.dish_manage,
-      datos.selectors.manage_dish.delete_button,
-      datos.selectors.manage_dish.confirm_delete_button,
+      `#delete-dish-button-${dish_id}`,
+      `#confirm-delete-dish-button-${dish_id}`,
     ]);
     cy.contains('Plato eliminado').should('be.visible');
   });

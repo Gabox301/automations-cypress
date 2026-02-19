@@ -34,7 +34,7 @@
       "dish_weight": "#weightGrams",
       "dish_cook_time": "#cookingTimeMinutes",
       "dish_qr_link": "#qrLink",
-      "dish_create_button": "#save-dish-button"
+      "dish_create_button": "#add-dish-button"
     },
     "manage_dish": {
       "edit_button": "[id^=\"edit-dish-button-\"]",
