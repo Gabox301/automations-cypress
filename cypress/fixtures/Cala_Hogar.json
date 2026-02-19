@@ -1,0 +1,83 @@
+{
+  "base_url": "https://cala-hogar.vercel.app/",
+  "catalog_button": "#home-footer-catalog-link",
+  "selectors": {
+    "login": {
+      "username": "#admin-email-input",
+      "password": "#admin-password-input",
+      "login_button": "#admin-login-submit"
+    },
+    "navigations": {
+      "create_article": "#sidebar-create-article-btn",
+      "manage_articles": "#sidebar-manage-articles-btn",
+      "create_promotion": "#sidebar-create-promotion-btn",
+      "manage_promotions": "#sidebar-manage-promotions-btn",
+      "logout": "#sidebar-logout-btn",
+      "confirm_logout": "#logout-confirm-btn"
+    },
+    "create_article": {
+      "title": "#admin-create-article-title-input",
+      "price": "#admin-create-article-price-input",
+      "description": "#admin-create-article-description-input",
+      "image": "[data-testid='image-upload-input']",
+      "create_button": "#admin-create-article-submit-btn"
+    },
+    "manage_article": {
+      "edit_button": "[id^='admin-article-card-'][id$='-edit-btn']",
+      "delete_button": "[id^='admin-article-card-'][id$='-delete-btn']",
+      "confirm_delete_button": "[id^='confirm-delete-action-']"
+    },
+    "edit_article": {
+      "title": "#admin-edit-article-title-input",
+      "price": "#admin-edit-article-price-input",
+      "description": "#admin-edit-article-description-input",
+      "state": "#admin-edit-article-status-select",
+      "state_option": ["Borrador"],
+      "update_button": "#admin-edit-article-submit-btn"
+    },
+    "create_promotion": {
+      "title": "#admin-create-promotion-name-input",
+      "code": "#admin-create-promotion-code-input",
+      "percent": "#admin-create-promotion-percent-input",
+      "products_select": "#admin-create-promotion-products-select",
+      "create_button": "#admin-create-promotion-submit-btn"
+    },
+    "manage_promotion": {
+      "edit_button": "[id^='btn-edit-promotion-']",
+      "delete_button": "[id^='btn-delete-promotion-']",
+      "confirm_delete_button": "[id^='btn-confirm-delete-']"
+    },
+    "edit_promotion": {
+      "title": "#promo-name",
+      "code": "#promo-code",
+      "percent": "#promo-percent",
+      "products_select": "#promo-products-trigger",
+      "products_options": "#promo-products-list",
+      "update_button": "#admin-edit-promotion-submit-btn"
+    }
+  },
+  "article_data": {
+    "title": "Artículo de prueba",
+    "price": "15800",
+    "description": "Descripción del artículo de prueba",
+    "image": "cypress/fixtures/images/Cala_1.webp"
+  },
+  "article_edit": {
+    "title": "Artículo de prueba editado",
+    "price": "16800",
+    "description": "Descripción del artículo de prueba editado",
+    "image": "cypress/fixtures/images/Cala_2.webp"
+  },
+  "promotion_data": {
+    "title": "Promoción de prueba",
+    "code": "PROMO123",
+    "percent": "20",
+    "products": ["Artículo de prueba"]
+  },
+  "promotion_edit": {
+    "title": "Promoción de prueba editada",
+    "code": "PROMO456",
+    "percent": "30",
+    "products": ["Todos los productos"]
+  }
+}
