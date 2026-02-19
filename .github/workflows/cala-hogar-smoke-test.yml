@@ -1,0 +1,28 @@
+name: Cala Hogar Smoke Test
+
+on:
+  schedule:
+    - cron: '5 0 */3 * *'
+  workflow_dispatch:
+
+jobs:
+  cypress-run:
+    runs-on: windows-latest
+    env:
+      CALA_HOGAR_USER: ${{ secrets.CALA_HOGAR_USER }}
+      CALA_HOGAR_PASSWORD: ${{ secrets.CALA_HOGAR_PASSWORD }}
+      CALA_HOGAR_ADMIN_LOGIN: ${{ secrets.CALA_HOGAR_ADMIN_LOGIN }}
+      CALA_HOGAR_ADMIN_URL: ${{ secrets.CALA_HOGAR_ADMIN_URL }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      - name: Setup Node
+        uses: actions/setup-node@v6
+        with:
+          node-version: 22
+
+      - name: Cypress run
+        uses: cypress-io/github-action@v6
+        with:
+          spec: cypress/e2e/Cala_Hogar/smoke_test.cy.js
