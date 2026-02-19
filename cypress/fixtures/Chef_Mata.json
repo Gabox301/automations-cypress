@@ -31,9 +31,9 @@
       "dish_ingredient_remove_button": "#remove-ingredient-button-1",
       "dish_calories": "#calories",
       "dish_protein": "#protein",
-      "dish_weight": "#weight",
-      "dish_cook_time": "#cooking-time",
-      "dish_qr_link": "#qrCodeUrl",
+      "dish_weight": "#weightGrams",
+      "dish_cook_time": "#cookingTimeMinutes",
+      "dish_qr_link": "#qrLink",
       "dish_create_button": "#save-dish-button"
     },
     "manage_dish": {
