@@ -17,6 +17,8 @@ describe('Navegación a Cala Hogar (pública)', () => {
 });
 
 describe('Navegación a Cala Hogar (admin)', () => {
+  let promo_id, article_id;
+
   beforeEach(() => {
     cy.env(['CALA_HOGAR_ADMIN_LOGIN', 'CALA_HOGAR_ADMIN_URL', 'CALA_HOGAR_USER', 'CALA_HOGAR_PASSWORD']).then(
       ({ CALA_HOGAR_ADMIN_LOGIN, CALA_HOGAR_ADMIN_URL, CALA_HOGAR_USER, CALA_HOGAR_PASSWORD }) => {
@@ -82,8 +84,8 @@ describe('Navegación a Cala Hogar (admin)', () => {
       .first()
       .invoke('attr', 'id')
       .then((id) => {
-        const promoId = id.replace('btn-edit-promotion-', '');
-        cy.visit(`${datos.base_url}admin/panel/promociones/${promoId}/editar`);
+        promo_id = id.replace('btn-edit-promotion-', '');
+        cy.visit(`${datos.base_url}admin/panel/promociones/${promo_id}/editar`);
       });
     cy.limpiar_inputs(inputs_to_manage.promotion.map((field) => datos.selectors.edit_promotion[field]));
     cy.llenar_inputs(edits_data);
@@ -97,11 +99,9 @@ describe('Navegación a Cala Hogar (admin)', () => {
   });
 
   it('Debería poder eliminar una promoción', () => {
-    cy.click_buttons([
-      datos.selectors.navigations.manage_promotions,
-      datos.selectors.manage_promotion.delete_button,
-      datos.selectors.manage_promotion.confirm_delete_button,
-    ]);
+    cy.click_buttons([datos.selectors.navigations.manage_promotions]);
+    cy.get(`#btn-delete-promotion-${promo_id}`).click();
+    cy.click_buttons([datos.selectors.manage_promotion.confirm_delete_button]);
     cy.contains('Promoción eliminada', { timeout: 20000 }).should('be.visible');
   });
 
@@ -115,9 +115,9 @@ describe('Navegación a Cala Hogar (admin)', () => {
       .first()
       .invoke('attr', 'id')
       .then((id) => {
-        const articleId = id.replace('admin-article-card-', '').replace('-edit-btn', '');
+        article_id = id.replace('admin-article-card-', '').replace('-edit-btn', '');
         cy.env(['CALA_HOGAR_ADMIN_URL']).then(({ CALA_HOGAR_ADMIN_URL }) => {
-          cy.visit(`${CALA_HOGAR_ADMIN_URL}/gestionar-articulos/${articleId}/editar`);
+          cy.visit(`${CALA_HOGAR_ADMIN_URL}/gestionar-articulos/${article_id}/editar`);
         });
       });
     cy.limpiar_inputs(inputs_to_manage.article.map((field) => datos.selectors.edit_article[field]));
@@ -131,11 +131,9 @@ describe('Navegación a Cala Hogar (admin)', () => {
   });
 
   it('Debería poder eliminar un artículo', () => {
-    cy.click_buttons([
-      datos.selectors.navigations.manage_articles,
-      datos.selectors.manage_article.delete_button,
-      datos.selectors.manage_article.confirm_delete_button,
-    ]);
+    cy.click_buttons([datos.selectors.navigations.manage_articles]);
+    cy.get(`[id="admin-article-card-${article_id}-delete-btn"]`).click();
+    cy.click_buttons([datos.selectors.manage_article.confirm_delete_button]);
     cy.contains('Artículo eliminado', { timeout: 20000 }).should('be.visible');
   });
 
