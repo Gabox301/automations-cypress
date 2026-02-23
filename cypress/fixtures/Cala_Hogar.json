@@ -20,6 +20,8 @@
       "price": "#admin-create-article-price-input",
       "description": "#admin-create-article-description-input",
       "image": "[data-testid='image-upload-input']",
+      "category": "#admin-create-article-category-select",
+      "category_select": "#admin-create-article-category-select-option-hogar",
       "create_button": "#admin-create-article-submit-btn"
     },
     "manage_article": {
@@ -32,7 +34,9 @@
       "price": "#admin-edit-article-price-input",
       "description": "#admin-edit-article-description-input",
       "state": "#admin-edit-article-status-select",
-      "state_option": ["Borrador"],
+      "state_select": "#admin-edit-article-status-select-option-draft",
+      "category": "#admin-edit-article-category-select",
+      "category_select": "#admin-edit-article-category-select-option-accesorios",
       "update_button": "#admin-edit-article-submit-btn"
     },
     "create_promotion": {
@@ -60,12 +64,14 @@
     "title": "Artículo de prueba",
     "price": "15800",
     "description": "Descripción del artículo de prueba",
+    "category": "hogar",
     "image": "cypress/fixtures/images/Cala_1.webp"
   },
   "article_edit": {
     "title": "Artículo de prueba editado",
     "price": "16800",
     "description": "Descripción del artículo de prueba editado",
+    "category": "accesorios",
     "image": "cypress/fixtures/images/Cala_2.webp"
   },
   "promotion_data": {

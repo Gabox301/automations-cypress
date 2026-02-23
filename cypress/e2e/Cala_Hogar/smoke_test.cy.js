@@ -4,6 +4,7 @@ const inputs_to_manage = {
   article: ['title', 'price', 'description'],
   promotion: ['title', 'code', 'percent'],
 };
+let promo_id, article_id;
 
 describe('Navegación a Cala Hogar (pública)', () => {
   it('Debería navegar a la URL base y ver el catálogo', () => {
@@ -17,8 +18,6 @@ describe('Navegación a Cala Hogar (pública)', () => {
 });
 
 describe('Navegación a Cala Hogar (admin)', () => {
-  let promo_id, article_id;
-
   beforeEach(() => {
     cy.env(['CALA_HOGAR_ADMIN_LOGIN', 'CALA_HOGAR_ADMIN_URL', 'CALA_HOGAR_USER', 'CALA_HOGAR_PASSWORD']).then(
       ({ CALA_HOGAR_ADMIN_LOGIN, CALA_HOGAR_ADMIN_URL, CALA_HOGAR_USER, CALA_HOGAR_PASSWORD }) => {
@@ -54,6 +53,8 @@ describe('Navegación a Cala Hogar (admin)', () => {
     }));
     cy.click_buttons([datos.selectors.navigations.create_article]);
     cy.llenar_inputs(inputs_data);
+    cy.get(datos.selectors.create_article.category).click();
+    cy.get(datos.selectors.create_article.category_select).click();
     cy.get(datos.selectors.create_article.image).selectFile(datos.article_data.image, { force: true });
     cy.click_buttons([datos.selectors.create_article.create_button]);
     cy.contains('Artículo creado', { timeout: 20000 }).should('be.visible');
@@ -122,8 +123,11 @@ describe('Navegación a Cala Hogar (admin)', () => {
       });
     cy.limpiar_inputs(inputs_to_manage.article.map((field) => datos.selectors.edit_article[field]));
     cy.llenar_inputs(edits_data);
-    cy.get(datos.selectors.edit_article.state).select(datos.selectors.edit_article.state_option[0]);
+    cy.get(datos.selectors.edit_article.state).click();
+    cy.get(datos.selectors.edit_article.state_select).click();
     cy.get(datos.selectors.create_article.image).selectFile(datos.article_edit.image, { force: true });
+    cy.get(datos.selectors.edit_article.category).click();
+    cy.get(datos.selectors.edit_article.category_select).click();
     cy.click_buttons([datos.selectors.edit_article.update_button]);
     cy.contains('Cambios guardados', { timeout: 20000 }).should('be.visible');
     cy.contains('Sin stock', { timeout: 20000 }).should('be.visible');
