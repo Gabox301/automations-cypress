@@ -1,0 +1,29 @@
+name: Orux Smoke Test
+
+on:
+  schedule:
+    - cron: '15 0 */3 * *'
+  workflow_dispatch:
+
+jobs:
+  cypress-run:
+    runs-on: windows-latest
+    env:
+      SUPABASE_ANON_KEY: ${{ secrets.SUPABASE_ANON_KEY }}
+      SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+      ORUX_BASE_URL: ${{ secrets.ORUX_BASE_URL }}
+      ORUX_USERNAME: ${{ secrets.ORUX_USERNAME }}
+      ORUX_PASSWORD: ${{ secrets.ORUX_PASSWORD }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      - name: Setup Node
+        uses: actions/setup-node@v6
+        with:
+          node-version: 22
+
+      - name: Cypress run
+        uses: cypress-io/github-action@v6
+        with:
+          spec: cypress/e2e/Orux/smoke_test.cy.js
