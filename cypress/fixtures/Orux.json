@@ -1,0 +1,64 @@
+{
+  "categories": {
+    "name": "Test Category",
+    "color": "#FF5733",
+    "edit": {
+      "name": "Test Category Edited",
+      "color": "#00FF00"
+    }
+  },
+  "budgets": {
+    "amount": 500,
+    "currency": "USD",
+    "period": "monthly",
+    "edit": {
+      "amount": 600,
+      "currency": "EUR",
+      "period": "monthly"
+    }
+  },
+  "goals": {
+    "name": "Viaje a Japón",
+    "target_amount": 5000,
+    "currency": "USD",
+    "current_amount": 100,
+    "deadline": "2030-12-31",
+    "edit": {
+      "name": "Viaje a Japón Editado",
+      "target_amount": 6000,
+      "currency": "USD",
+      "current_amount": 200,
+      "deadline": "2031-12-31"
+    }
+  },
+  "expenses": {
+    "description": "Prueba de Gasto",
+    "amount": 25.5,
+    "currency": "GBP",
+    "date": "2026-09-27",
+    "is_recurring": true,
+    "recurrence_frequency": "weekly",
+    "edit": {
+      "description": "Prueba de Gasto Editado",
+      "amount": 30.0,
+      "currency": "GBP",
+      "date": "2026-09-28",
+      "is_recurring": false,
+      "recurrence_frequency": "monthly"
+    }
+  },
+  "incomes": {
+    "description": "Salario mensual",
+    "amount": 2500,
+    "currency": "ARS",
+    "is_recurring": true,
+    "recurrence_frequency": "monthly",
+    "edit": {
+      "description": "Salario mensual Editado",
+      "amount": 2600,
+      "currency": "ARS",
+      "is_recurring": false,
+      "recurrence_frequency": "weekly"
+    }
+  }
+}
