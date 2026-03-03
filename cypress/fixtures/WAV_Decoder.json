@@ -1,0 +1,31 @@
+{
+  "base_url": "https://wav-decoder.vercel.app/",
+  "selectors": {
+    "check_health_button": "#check-health-btn",
+    "file_input": "#file-input",
+    "sample_rate_select": "#sampleRate",
+    "channels_select": "#channels",
+    "bit_depth_select": "#bitDepth",
+    "selects": {
+      "sample_rates": [
+        "0: null",
+        "1: 8000",
+        "2: 11025",
+        "3: 16000",
+        "4: 22050",
+        "5: 32000",
+        "6: 44100",
+        "7: 48000",
+        "8: 96000",
+        "9: 192000"
+      ],
+      "channels": ["0: null", "1: 1", "2: 2", "3: 4", "4: 6", "5: 8"],
+      "bit_depths": ["0: null", "1: 8", "2: 16", "3: 24", "4: 32"]
+    },
+    "convert_button": "#convert-submit-btn"
+  },
+  "data": {
+    "light_wav": "cypress/fixtures/audios/light.wav",
+    "heavy_wav": "cypress/fixtures/audios/heavy.wav"
+  }
+}
