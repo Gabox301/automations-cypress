@@ -1,5 +1,6 @@
 {
   "base_url": "https://hono-url.vercel.app/",
+  "test_url": "https://hono-url.vercel.app/test",
   "selectors": {
     "service_check_state": ":nth-child(6) > .info-value",
     "service_check_button": ".btn",

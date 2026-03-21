@@ -1,26 +1,25 @@
 import datos from '../../fixtures/Hono_URLs.json';
 
-describe('Smoke Test Hono_URLs', () => {
-  beforeEach(() => {
+describe('Smoke Test Hono URLs', () => {
+  it('Comprobar info y estado del servicio', () => {
     cy.visit(datos.base_url);
     cy.url().should('include', datos.base_url);
     cy.get(datos.selectors.service_check_state).should('contain', 'Online').should('be.visible');
     cy.get(datos.selectors.service_check_button).should('be.visible').click();
-    cy.url().should('include', datos.base_url + 'test');
-  });
-
-  it('Comprobar el estado del servicio', () => {
+    cy.url().should('include', datos.test_url);
     cy.get(datos.selectors.health_check_button).should('be.visible').click();
     cy.get(datos.selectors.modal_status).should('contain.text', '200').should('be.visible');
   });
 
   it('Acceder a la documentacion del servicio', () => {
+    cy.visit(datos.test_url);
     cy.get(datos.selectors.get_docs_button).should('be.visible').click();
     cy.get(datos.selectors.modal_status).should('contain.text', '200').should('be.visible');
     cy.get(datos.selectors.modal_meta).should('contain.text', datos.base_url + 'docs');
   });
 
   it('Crear una nueva URL', () => {
+    cy.visit(datos.test_url);
     cy.get(datos.selectors.input_url).type(datos.url.github);
     cy.get(datos.selectors.custom_code).type(datos.code.gabo);
     cy.get(datos.selectors.create_url_button).should('be.visible').click();
@@ -29,6 +28,7 @@ describe('Smoke Test Hono_URLs', () => {
   });
 
   it('Intentar crear una URL ya en uso', () => {
+    cy.visit(datos.test_url);
     cy.get(datos.selectors.input_url).type(datos.url.github);
     cy.get(datos.selectors.custom_code).type(datos.code.gabo);
     cy.get(datos.selectors.create_url_button).should('be.visible').click();
@@ -39,6 +39,7 @@ describe('Smoke Test Hono_URLs', () => {
   });
 
   it('Obtener la informacion de una URL', () => {
+    cy.visit(datos.test_url);
     cy.get(datos.selectors.custom_code_stats).type(datos.code.gabo);
     cy.get(datos.selectors.get_stats_button).should('be.visible').click();
     cy.get(datos.selectors.modal_status).should('contain.text', '200').should('be.visible');
@@ -47,12 +48,14 @@ describe('Smoke Test Hono_URLs', () => {
   });
 
   it('Obtener el listado de URLs', () => {
+    cy.visit(datos.test_url);
     cy.get(datos.selectors.list_urls_button).should('be.visible').click();
     cy.get(datos.selectors.modal_status).should('contain.text', '200').should('be.visible');
     cy.get(datos.selectors.modal_output).should('contain.text', datos.code.gabo).should('be.visible');
   });
 
   it('Intentar utilizar codigo reservado', () => {
+    cy.visit(datos.test_url);
     cy.get(datos.selectors.update_code).type(datos.code.reserved);
     cy.get(datos.selectors.update_url_button).should('be.visible').click();
     cy.get(datos.selectors.modal_output)
@@ -61,6 +64,7 @@ describe('Smoke Test Hono_URLs', () => {
   });
 
   it('Actualizar la informacion de una URL', () => {
+    cy.visit(datos.test_url);
     cy.get(datos.selectors.update_code).type(datos.code.gabo);
     cy.get(datos.selectors.update_url).type(datos.url.linkedin);
     cy.get(datos.selectors.update_url_button).should('be.visible').click();
@@ -70,6 +74,7 @@ describe('Smoke Test Hono_URLs', () => {
   });
 
   it('Comprobar la redireccion de una URL', () => {
+    cy.visit(datos.test_url);
     cy.get(datos.selectors.redirect_code).type(datos.code.gabo);
     cy.get(datos.selectors.redirect_url_button).should('be.visible').click();
     cy.get(datos.selectors.modal_status).should('contain.text', '302').should('be.visible');
@@ -79,6 +84,7 @@ describe('Smoke Test Hono_URLs', () => {
   });
 
   it('Eliminar una URL', () => {
+    cy.visit(datos.test_url);
     cy.get(datos.selectors.delete_code).type(datos.code.gabo);
     cy.get(datos.selectors.delete_url_button).should('be.visible').click();
     cy.get(datos.selectors.modal_status).should('contain.text', '200').should('be.visible');
