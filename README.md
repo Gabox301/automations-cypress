@@ -71,4 +71,4 @@ npm run back
 
 ---
 
-Desarrollado con ❤️ por [Gabriel Ortega](https://github.com/Gabox301)
+Desarrollado con ❤️ por [Gabriel Ortega](https://www.linkedin.com/in/gabo301/)
