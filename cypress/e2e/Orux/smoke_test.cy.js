@@ -3,7 +3,7 @@ import datos from '../../fixtures/Orux.json';
 let token,
   category_id = '';
 
-describe('Navegación Orux', () => {
+describe('Smoke Test Orux', () => {
   before('Obtener token', () => {
     cy.env(['ORUX_USERNAME', 'ORUX_PASSWORD']).then(({ ORUX_USERNAME, ORUX_PASSWORD }) => {
       cy.orux_auth(ORUX_USERNAME, ORUX_PASSWORD).then((response) => {

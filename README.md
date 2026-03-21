@@ -9,11 +9,11 @@ El proyecto sigue la estructura estándar de Cypress:
 - **`cypress/e2e/`**: Contiene las especificaciones de las pruebas organizadas por proyecto:
   - `Cala_Hogar`
   - `Chef_Mata`
-  - `Chispas_Historias`
   - `CyberMap`
-  - `Liss_and_Rosse`
+  - `Hono_URLs`
+  - `Nitro_Chat`
   - `Orux`
-  - `Trade_Vision`
+  - `WAV_Decoder`
 - **`cypress/fixtures/`**: Archivos de datos estáticos utilizados en las pruebas.
 - **`cypress/support/`**: Archivos de configuración y comandos personalizados de Cypress.
 - **`package.json`**: Configuración de dependencias y scripts de ejecución.
@@ -23,7 +23,7 @@ El proyecto sigue la estructura estándar de Cypress:
 
 Para ejecutar estas automatizaciones, necesitarás tener instalado:
 
-- [Node.js](https://nodejs.org/) (Versión recomendada: 22 o superior)
+- [Node.js](https://nodejs.org/) (Versión recomendada: 24 o superior)
 
 ## 🚀 Instalación
 

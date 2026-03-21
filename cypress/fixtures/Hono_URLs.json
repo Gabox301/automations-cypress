@@ -1,0 +1,37 @@
+{
+  "base_url": "https://hono-url.vercel.app/",
+  "selectors": {
+    "service_check_state": ":nth-child(6) > .info-value",
+    "service_check_button": ".btn",
+    "health_check_button": "#btn-test-health",
+    "get_docs_button": "#btn-get-docs",
+    "input_url": "#createUrl",
+    "custom_code": "#customCode",
+    "expiration": "#expiresInDays",
+    "create_url_button": "#btn-create-url",
+    "list_urls_button": "#btn-list-urls",
+    "custom_code_stats": "#statsCode",
+    "get_stats_button": "#btn-get-stats",
+    "update_code": "#updateCode",
+    "update_url": "#updateUrl",
+    "update_expiration": "#updateExpiresInDays",
+    "update_url_button": "#btn-update-url",
+    "redirect_code": "#redirectCode",
+    "redirect_url_button": "#btn-redirect-url",
+    "delete_code": "#deleteCode",
+    "delete_url_button": "#btn-delete-url",
+    "modal_title": "#modalTitle",
+    "modal_status": "#modalStatus",
+    "modal_meta": "#modalMeta > :nth-child(2)",
+    "modal_output": "#modalOutput",
+    "modal_close_button": "#btn-modal-close-footer"
+  },
+  "url": {
+    "github": "https://github.com/Gabox301",
+    "linkedin": "https://www.linkedin.com/in/gabo301/"
+  },
+  "code": {
+    "gabo": "gabo_tech",
+    "reserved": "test"
+  }
+}

@@ -1,7 +1,6 @@
 import datos from '../../fixtures/Chef_Mata.json';
 
 let dish_id;
-
 const inputs_to_manage = [
   'dish_name',
   'dish_price',
