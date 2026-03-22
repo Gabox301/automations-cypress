@@ -1,0 +1,28 @@
+{
+  "base_url": "https://nitro-chat-sse.vercel.app/",
+  "selectors": {
+    "request": {
+      "header": "#req-header",
+      "log": "#req-log",
+      "footer": "#req-footer"
+    },
+    "chat": {
+      "header": "#chat-header",
+      "status": "#status",
+      "messages": "#messages",
+      "input": "#input",
+      "send_button": "#send-btn"
+    },
+    "response": {
+      "header": "#res-header",
+      "log": "#res-log",
+      "footer": "#res-footer"
+    }
+  },
+  "messages": {
+    "hello": "Hola, ¿todo bien? Escribo para comprobar si el servicio funciona correctamente.",
+    "reply": "Hola, todo bien, gracias. Yo también quiero comprobar el servicio.",
+    "confirm": "Hola, confirmo que todo funciona correctamente.",
+    "goodbye": "Gracias por ayudar en la comprobacion, ¡hasta el proximo test!"
+  }
+}
