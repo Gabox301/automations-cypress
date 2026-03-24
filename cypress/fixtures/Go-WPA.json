@@ -1,0 +1,38 @@
+{
+  "base_url": "https://go-wpa.vercel.app/",
+  "test_url": "https://go-wpa.vercel.app/dashboard",
+  "selectors": {
+    "access_panel": "#btn-mega",
+    "sidebar_panel": "#nav-item-dashboard",
+    "sidebar_scan": "#nav-item-scan",
+    "scan_url": "#scan-input-url",
+    "scan_device": "#scan-select-device",
+    "scan_region": "#scan-select-region",
+    "scan_button": "#scan-submit-btn",
+    "scan_status": "#scan-result-status",
+    "sidebar_history": "#nav-item-history",
+    "history_all": "#history-tab-all",
+    "history_success": "#history-tab-completed",
+    "history_failed": "#history-tab-failed",
+    "history_pending": "#history-tab-pending",
+    "history_processing": "#history-tab-processing",
+    "history_search": "#history-search",
+    "sidebar_cwb": "#nav-item-vitals",
+    "domain_select": "#vitals-domain-select",
+    "lcp_card": "#vitals-card-lcp",
+    "cls_card": "#vitals-card-cls",
+    "ttfb_card": "#vitals-card-ttfb",
+    "fcp_card": "#vitals-card-fcp",
+    "score_card": "#vitals-card-performance_score",
+    "speed_index_card": "#vitals-card-speed_index"
+  },
+  "data": {
+    "url": "https://cyberpunk-ip.vercel.app/",
+    "mobile": "mobile",
+    "desktop": "desktop",
+    "USA_East": "us-east",
+    "USA_West": "us-west",
+    "Europe_West": "eu-west",
+    "Asia_Pacific": "ap-southeast"
+  }
+}
