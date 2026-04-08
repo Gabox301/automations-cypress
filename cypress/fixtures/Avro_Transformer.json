@@ -1,0 +1,20 @@
+{
+  "base_url": "https://avro-transformer.vercel.app/",
+  "selectors": {
+    "file_input": "#input-file",
+    "open_file_button": "#btn-abrir-archivo",
+    "json_tab": "#tab-json",
+    "table_tab": "#tab-tabla",
+    "copy": "#btn-copiar",
+    "download": "#btn-descargar",
+    "new_file": "#btn-nuevo"
+  },
+  "downloads": {
+    "json_name": "avro.json",
+    "csv_name": "avro.csv"
+  },
+  "data": {
+    "json": "cypress/fixtures/documents/avro.json",
+    "avro": "cypress/fixtures/documents/avro.avro"
+  }
+}
