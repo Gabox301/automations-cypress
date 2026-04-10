@@ -7,9 +7,11 @@ Directorio de Automatizaciones para proyectos personales de **GaboTech**. Este r
 El proyecto sigue la estructura estándar de Cypress:
 
 - **`cypress/e2e/`**: Contiene las especificaciones de las pruebas organizadas por proyecto:
+  - `Avro Transformer`
   - `Cala_Hogar`
   - `Chef_Mata`
   - `CyberMap`
+  - `Go-WPA`
   - `Hono_URLs`
   - `Nitro_Chat`
   - `Orux`

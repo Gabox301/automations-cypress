@@ -1,6 +1,12 @@
 {
   "base_url": "https://cyber-map.vercel.app/",
   "selectors": {
+    "provider_trigger": "#provider-status-indicator-trigger",
+    "provider_nominatim": "#provider-status-indicator-popover-row-nominatim",
+    "nominatim_status": "#provider-status-indicator-popover-status-nominatim",
+    "provider_locationiq": "#provider-status-indicator-popover-row-locationiq",
+    "locationiq_status": "#provider-status-indicator-popover-status-locationiq",
+    "provider_tooltip_text": "#provider-status-indicator-tooltip-text",
     "coordinate_copy_button": "#coordinate-copy-button",
     "google_maps_button": "#coordinate-google-maps-button",
     "close_button": "#coordinate-close-button",
