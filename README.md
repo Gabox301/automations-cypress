@@ -8,14 +8,15 @@ El proyecto sigue la estructura estándar de Cypress:
 
 - **`cypress/e2e/`**: Contiene las especificaciones de las pruebas organizadas por proyecto:
   - `Avro Transformer` --> [![Avro Transformer Smoke Test](https://github.com/Gabox301/automations-cypress/actions/workflows/avro-transformer-smoke-test.yml/badge.svg)](https://github.com/Gabox301/automations-cypress/actions/workflows/avro-transformer-smoke-test.yml)
-  - `Cala_Hogar` --> [![Cala Hogar Smoke Test](https://github.com/Gabox301/automations-cypress/actions/workflows/cala-hogar-smoke-test.yml/badge.svg)](https://github.com/Gabox301/automations-cypress/actions/workflows/cala-hogar-smoke-test.yml)
-  - `Chef_Mata` --> [![Chef Mata Smoke Test](https://github.com/Gabox301/automations-cypress/actions/workflows/chef-mata-smoke-test.yml/badge.svg)](https://github.com/Gabox301/automations-cypress/actions/workflows/chef-mata-smoke-test.yml)
+  - `Cala Hogar` --> [![Cala Hogar Smoke Test](https://github.com/Gabox301/automations-cypress/actions/workflows/cala-hogar-smoke-test.yml/badge.svg)](https://github.com/Gabox301/automations-cypress/actions/workflows/cala-hogar-smoke-test.yml)
+  - `Chef Mata` --> [![Chef Mata Smoke Test](https://github.com/Gabox301/automations-cypress/actions/workflows/chef-mata-smoke-test.yml/badge.svg)](https://github.com/Gabox301/automations-cypress/actions/workflows/chef-mata-smoke-test.yml)
   - `CyberMap` --> [![CyberMap Smoke Test](https://github.com/Gabox301/automations-cypress/actions/workflows/cybermap-smoke-test.yml/badge.svg)](https://github.com/Gabox301/automations-cypress/actions/workflows/cybermap-smoke-test.yml)
+  - `Dieselpunk Countries` --> [![Dieselpunk Countries Smoke Test](https://github.com/Gabox301/automations-cypress/actions/workflows/dieselpunk-countries-smoke-test.yml/badge.svg)](https://github.com/Gabox301/automations-cypress/actions/workflows/dieselpunk-countries-smoke-test.yml)
   - `Go-WPA` --> [![Go WPA Smoke Test](https://github.com/Gabox301/automations-cypress/actions/workflows/go-wpa-smoke-test.yml/badge.svg)](https://github.com/Gabox301/automations-cypress/actions/workflows/go-wpa-smoke-test.yml)
-  - `Hono_URLs` --> [![Hono URLs Smoke Test](https://github.com/Gabox301/automations-cypress/actions/workflows/hono-urls-smoke-test.yml/badge.svg)](https://github.com/Gabox301/automations-cypress/actions/workflows/hono-urls-smoke-test.yml)
-  - `Nitro_Chat` --> [![Nitro Chat Smoke Test](https://github.com/Gabox301/automations-cypress/actions/workflows/nitro-chat-smoke-test.yml/badge.svg)](https://github.com/Gabox301/automations-cypress/actions/workflows/nitro-chat-smoke-test.yml)
+  - `Hono URLs` --> [![Hono URLs Smoke Test](https://github.com/Gabox301/automations-cypress/actions/workflows/hono-urls-smoke-test.yml/badge.svg)](https://github.com/Gabox301/automations-cypress/actions/workflows/hono-urls-smoke-test.yml)
+  - `Nitro Chat` --> [![Nitro Chat Smoke Test](https://github.com/Gabox301/automations-cypress/actions/workflows/nitro-chat-smoke-test.yml/badge.svg)](https://github.com/Gabox301/automations-cypress/actions/workflows/nitro-chat-smoke-test.yml)
   - `Orux` --> [![Orux Smoke Test](https://github.com/Gabox301/automations-cypress/actions/workflows/orux-smoke-test.yml/badge.svg)](https://github.com/Gabox301/automations-cypress/actions/workflows/orux-smoke-test.yml)
-  - `WAV_Decoder` --> [![WAV Decoder Smoke Test](https://github.com/Gabox301/automations-cypress/actions/workflows/wav-decoder-smoke-test.yml/badge.svg)](https://github.com/Gabox301/automations-cypress/actions/workflows/wav-decoder-smoke-test.yml)
+  - `WAV Decoder` --> [![WAV Decoder Smoke Test](https://github.com/Gabox301/automations-cypress/actions/workflows/wav-decoder-smoke-test.yml/badge.svg)](https://github.com/Gabox301/automations-cypress/actions/workflows/wav-decoder-smoke-test.yml)
 - **`cypress/fixtures/`**: Archivos de datos estáticos utilizados en las pruebas.
 - **`cypress/support/`**: Archivos de configuración y comandos personalizados de Cypress.
 - **`package.json`**: Configuración de dependencias y scripts de ejecución.
