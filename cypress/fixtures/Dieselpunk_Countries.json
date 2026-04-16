@@ -1,0 +1,30 @@
+{
+  "base_url": "https://dieselpunk-countries.vercel.app/",
+  "selectors": {
+    "search_input": "#search-input",
+    "count-display": "#count-display",
+    "region_buttons": ".region-buttons",
+    "region_btn": ".region-btn",
+    "country_card": ".country-card",
+    "country_card_by_code": "[data-code='{{code}}']",
+    "country_name": ".country-name",
+    "country_code": ".country-code",
+    "region_btn_by_region": "[data-region='{{region}}']",
+    "pagination_counter": "#page-display",
+    "next_page": "#next-btn",
+    "previous_page": "#prev-btn"
+  },
+  "data": {
+    "country": "Argentina",
+    "country_code": "ARG",
+    "city": "Caracas",
+    "regions": {
+      "all": "all",
+      "africa": "Africa",
+      "americas": "Americas",
+      "asia": "Asia",
+      "europe": "Europe",
+      "oceania": "Oceania"
+    }
+  }
+}
