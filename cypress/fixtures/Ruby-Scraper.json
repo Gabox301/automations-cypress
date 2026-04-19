@@ -1,0 +1,51 @@
+{
+  "base_url": "https://ruby-scraper.onrender.com",
+  "selectors": {
+    "navigation": {
+      "dashboard": "#nav-dashboard",
+      "pages": "#nav-pages",
+      "crawl": "#nav-crawl",
+      "webhooks": "#nav-webhooks",
+      "history": "#nav-history",
+      "view_pages": "#btn-view-pages"
+    },
+    "pages": {
+      "input_search": "#search-input",
+      "details": "[id^=\"page-link-\"]",
+      "delete": "[id^=\"btn-delete-page-\"]",
+      "modal_api_key": "#modal-api-key",
+      "confirm": "#modal-confirm",
+      "back": "#btn-back-pages"
+    },
+    "crawl": {
+      "url": "#url",
+      "api_key": "#api_key",
+      "depth": "#depth",
+      "max_pages": "#max_pages",
+      "delay": "#delay",
+      "same_domain": "#checkbox-samedomain",
+      "skip_duplicate": "#checkbox-skipduplicates",
+      "submit": "#btn-start-crawl",
+      "success_message": "#success-message"
+    },
+    "webhooks": {
+      "url": "#url",
+      "new_page": "#webhooks-checkbox-created",
+      "updated": "#webhooks-checkbox-updated",
+      "deleted": "#webhooks-checkbox-deleted",
+      "completed": "#webhooks-checkbox-completed",
+      "submit": "#webhooks-btn-add"
+    },
+    "history": {
+      "page": "[id^=\"history-cell-page-\"]",
+      "link": "#history-link-0"
+    }
+  },
+  "data": {
+    "url": "https://bun.com/docs",
+    "depth": "1",
+    "max_pages": "1",
+    "delay": "4",
+    "url_search": "bun"
+  }
+}
