@@ -16,6 +16,7 @@ El proyecto sigue la estructura estándar de Cypress:
   - `Hono URLs` --> [![Hono URLs Smoke Test](https://github.com/Gabox301/automations-cypress/actions/workflows/hono-urls-smoke-test.yml/badge.svg)](https://github.com/Gabox301/automations-cypress/actions/workflows/hono-urls-smoke-test.yml)
   - `Nitro Chat` --> [![Nitro Chat Smoke Test](https://github.com/Gabox301/automations-cypress/actions/workflows/nitro-chat-smoke-test.yml/badge.svg)](https://github.com/Gabox301/automations-cypress/actions/workflows/nitro-chat-smoke-test.yml)
   - `Orux` --> [![Orux Smoke Test](https://github.com/Gabox301/automations-cypress/actions/workflows/orux-smoke-test.yml/badge.svg)](https://github.com/Gabox301/automations-cypress/actions/workflows/orux-smoke-test.yml)
+  - `Ruby Scraper` --> [![Ruby Scraper Smoke Test](https://github.com/Gabox301/automations-cypress/actions/workflows/ruby-scraper-smoke-test.yml/badge.svg)](https://github.com/Gabox301/automations-cypress/actions/workflows/ruby-scraper-smoke-test.yml)
   - `WAV Decoder` --> [![WAV Decoder Smoke Test](https://github.com/Gabox301/automations-cypress/actions/workflows/wav-decoder-smoke-test.yml/badge.svg)](https://github.com/Gabox301/automations-cypress/actions/workflows/wav-decoder-smoke-test.yml)
 - **`cypress/fixtures/`**: Archivos de datos estáticos utilizados en las pruebas.
 - **`cypress/support/`**: Archivos de configuración y comandos personalizados de Cypress.
