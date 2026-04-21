@@ -1,0 +1,23 @@
+name: PDF Atelier Smoke Test
+
+on:
+  schedule:
+    - cron: '55 0 */3 * *'
+  workflow_dispatch:
+
+jobs:
+  cypress-run:
+    runs-on: windows-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      - name: Setup Node
+        uses: actions/setup-node@v6
+        with:
+          node-version: 24
+
+      - name: Cypress run
+        uses: cypress-io/github-action@v6
+        with:
+          spec: cypress/e2e/PDF_Atelier/smoke_test.cy.js
