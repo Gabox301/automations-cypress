@@ -1,0 +1,33 @@
+{
+  "base_url": "https://pdf-atelier.vercel.app/",
+  "selectors": {
+    "create": {
+      "title_input": "#doc-title",
+      "element_type": "#el-type",
+      "element_x": "#el-x",
+      "element_y": "#el-y",
+      "content": "#el-text",
+      "font": "#el-fs",
+      "element_r": "#el-r",
+      "element_g": "#el-g",
+      "element_b": "#el-b",
+      "add_element": "button:contains('Añadir Elemento')",
+      "generate_pdf": "button:contains('Generar PDF')"
+    }
+  },
+  "tabs": {
+    "crear": "button:contains('Crear')",
+    "combinar": "button:contains('Combinar')",
+    "rellenar": "button:contains('Rellenar')",
+    "imagen": "button:contains('Imagen')"
+  },
+  "merge": {
+    "input": "#merge-pdf-file-input",
+    "merge_pdf": "button:contains('Combinar PDFs')"
+  },
+  "add_image": {
+    "pdf": "#img-pdf-input",
+    "image": "#img-file-input",
+    "add_image": "button:contains('Añadir Imagen')"
+  }
+}
