@@ -23,6 +23,6 @@ jobs:
           node-version: 24
 
       - name: Cypress run
-        uses: cypress-io/github-action@v6
+        uses: cypress-io/github-action@v7
         with:
           spec: cypress/e2e/Chef_Mata/smoke_test.cy.js
