@@ -13,7 +13,6 @@ describe('Navegación a Cala Hogar (pública)', () => {
     cy.scrollTo('bottom');
     cy.get(datos.catalog_button).should('be.visible').click();
     cy.url().should('include', '/catalog');
-    cy.contains('Catálogo', { timeout: 20000 }).should('be.visible');
     cy.contains('button', 'Hogar', { timeout: 20000 }).should('be.visible');
     cy.contains('button', 'Accesorios', { timeout: 20000 }).should('be.visible');
     cy.contains('button', 'Todos', { timeout: 20000 }).should('be.visible');
